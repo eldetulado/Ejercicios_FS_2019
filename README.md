@@ -1,0 +1,1 @@
+## Ejercicios varios de JavaScript para los _tutores de FullStack_  periodo I/2019 
