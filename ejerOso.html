@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicios</title>
+	<style type="text/css">
+		.verde{
+			background: green;
+			padding: 8px;
+		}
+
+		.rojo2{
+			background: red;
+			padding: 8px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="rojo">Hola Mundo</div>
+	<div class="amarillo">Yo no quieros vivir</div>
+	<div class="rojo">Hola Mundo</div>
+
+	<button id="btn">presioname</button>
+
+	<script type="text/javascript">
+		var num1, num2;
+		// n1e1();
+		// n1e2();
+		// n1e3();
+		// n1e4();
+		// n1e5();
+		// n1e6();
+		// n1e7();
+		// n1e8();
+
+		// var numbers = n2e1();
+		// n2e2(numbers);
+		// n2e3(numbers);
+		// n2e4(numbers);
+		// n2e5(numbers);
+		// n2e6(numbers);
+		// n2e7(numbers);
+		// n2e8();
+
+		// n3e1();
+		n3e2();
+
+
+
+
+
+
+		// NIVEL 1
+		function n1e1() {
+			while(num1 = prompt('numero 1'), num2 = prompt('numero 2')){
+				if(!(isNaN(num1) || isNaN(num2)) && parseInt(num1) > 0 && parseInt(num2) > 0)
+					break;
+			}
+
+			
+			if (parseInt(num1) == parseInt(num2))
+				console.log('son iguales');
+			else{
+				console.log('mayor ' + Math.max(parseInt(num1), parseInt(num2)));
+				console.log('menor ' + Math.min(parseInt(num1), parseInt(num2)));	
+			}
+		}
+
+		function n1e2(){
+			let numbers = [],
+				sum = 0;
+
+			while(num1 = prompt('numero')){
+				if (parseInt(num1) >= 0) {
+					numbers.push(parseInt(num1));
+				} else {
+					break;
+				}
+			}
+			console.table(numbers);
+			for (var i = 0; i < numbers.length; i++) {
+				sum += numbers[i];
+			}
+			console.log('suma ' + sum);
+			console.log('media ' + (sum/numbers.length));
+		}
+
+		function n1e3(){
+			num1 = prompt('numero 1');
+			num2 = prompt('numero 2');
+			let first = Math.max(parseInt(num1), parseInt(num2)),
+				second = Math.min(parseInt(num1), parseInt(num2));
+
+			for (var i = second; i <= first; i++) {
+				console.log(i);
+			}
+		}
+
+		function n1e4(){
+			num1 = prompt('numero 1');
+			num2 = prompt('numero 2');
+			let first = Math.max(parseInt(num1), parseInt(num2)),
+				second = Math.min(parseInt(num1), parseInt(num2));
+
+			for (var i = second; i <= first; i++) {
+				if(i % 2 == 1)
+					console.log(i);
+			}
+		}
+
+		function n1e5(){
+			num1 = prompt('numero');
+			for (var i = 1; i <= parseInt(num1); i++) {
+				if(parseInt(num1) % i == 0)
+					console.log(i);
+			}
+		}
+
+		function n1e6(){
+			num1 = prompt('numero');
+			if(parseInt(num1) % 2 == 0)
+				console.log('es par');
+			else
+				console.log('es impar');
+		}
+
+		function n1e7(){
+			num1 = prompt('numero');
+			for (var i = 1; i <= 10; i++) {
+				console.log(num1 + '*' + i + ' = ' + (i*parseInt(num1)));
+			}
+		}
+
+		function n1e8(){
+			while(num1 = prompt('numero 1'), num2 = prompt('numero 2')){
+				if(!(isNaN(num1) || isNaN(num2)))
+					break;
+			}
+			console.log('suma ' + (parseInt(num1) + parseInt(num2)));
+			console.log('resta ' + (parseInt(num1) - parseInt(num2)));
+			console.log('multiplicacion ' + (parseInt(num1) * parseInt(num2)));
+			console.log('division ' + (parseInt(num1) / parseInt(num2)));
+
+			alert('suma ' + (parseInt(num1) + parseInt(num2)));
+			alert('resta ' + (parseInt(num1) - parseInt(num2)));
+			alert('multiplicacion ' + (parseInt(num1) * parseInt(num2)));
+			alert('division ' + (parseInt(num1) / parseInt(num2)));
+
+			document.body.innerHTML = 'suma ' + (parseInt(num1) + parseInt(num2));
+			document.body.innerHTML += ' resta ' + (parseInt(num1) - parseInt(num2));
+			document.body.innerHTML += ' multiplicacion ' + (parseInt(num1) * parseInt(num2));
+			document.body.innerHTML += ' division ' + (parseInt(num1) / parseInt(num2));
+		}
+
+		// NIVEL 2
+		function n2e1() {
+			let numbers = [];
+			for (var i = 1; i <= 6; i++) {
+				numbers.push(parseInt(prompt()))
+			}
+			return numbers;
+		}
+
+		function n2e2(numbers) {
+			console.table(numbers);
+			document.body.innerHTML = numbers.toString();
+		}
+
+		function n2e3(numbers) {
+			numbers.sort()
+			console.table(numbers);
+			document.body.innerHTML = numbers.toString();
+		}
+
+		function n2e4(numbers) {
+			numbers.reverse()
+			console.table(numbers);
+			document.body.innerHTML = numbers.toString();
+		}
+
+		function n2e5(numbers) {
+			console.table(numbers.length);
+		}
+		
+		function n2e6(numbers) {
+			let pos = numbers.lastIndexOf(parseInt(prompt('numero buscar')));
+			if(pos < 0)
+				console.log('no existe');
+			else
+				console.log('posicion ' + pos);
+		}
+
+		function n2e7(numbers) {
+			// forin
+			for(var x in numbers){
+				console.log(numbers[x]);
+			}
+
+			//foreach
+			numbers.forEach(function(valor){
+				console.log(valor);
+			});
+
+			// forof
+			for(var z of numbers){
+				console.log(z);
+			}
+			
+		}
+
+		function n2e8() {
+			let cads = ['arny','oso','salchi'];
+			console.table(cads);
+			let n = parseInt(prompt('cantidad'));
+			for (var i = 0; i < n; i++) {
+				cads.unshift(prompt('valor'));
+			}
+			console.table(cads);
+		}
+
+
+		// NIVEL 3
+		function n3e1() {
+			var cajas = document.getElementsByClassName('rojo');
+			for(var caja of cajas){
+				caja.style = 'background: red; color: white;';
+			}	
+		}
+
+		function n3e2() {
+			var btn = document.getElementById('btn');
+			btn.addEventListener('click', function(){
+				if (btn.className == 'verde') {
+					btn.className = 'rojo2';
+				}else{
+					btn.className = 'verde';
+				}
+
+			});
+			
+			
+		}		
+		
+	</script>
+</body>
+</html>
